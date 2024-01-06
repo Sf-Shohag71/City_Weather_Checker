@@ -1,6 +1,8 @@
+//openWeather API
+//API_URL = https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
 const API_KEY = "0aefcd7096d22cadd1b9239f55f94fd3";
-const API_URL =
-  "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+const API_URL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
 
 const inputText = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
@@ -14,7 +16,6 @@ checkWeather = async (city) => {
     document.querySelector(".error").style.display = "block";
   } else {
     const data = await response.json();
-
     document.querySelector(".city").innerHTML = data.name;
     document.querySelector(".temp").innerHTML = parseInt(data.main.temp) + "°c";
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
